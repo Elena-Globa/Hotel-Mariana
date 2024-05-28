@@ -1,0 +1,38 @@
+<header class="header" data-scroll _header-show>
+	<div class="header__container">
+		<div class="header__menu menu">
+			<nav class="meny__body body-menu">
+				<ul class="menu__list">
+					<li class="menu__item"><a data-goto-header data-goto=".location" data-lang="link-1" href="#location" class="menu__link">Про готель</a></li>
+					<li class="menu__item"><a data-goto=".rooms" href="#rooms" data-lang="link-2" class="menu__link">Номери</a></li>
+					<!-- <li class="menu__item"><a data-goto-header data-goto=".price" href="#!" class="menu__link">Вартiсть</a></li> -->
+					<li class="menu__item"><a data-goto-header data-goto=".contacts" data-lang="link-3" href="#contacts" class="menu__link">Контакти</a></li>
+					</ul>
+			</nav>
+			</div>	
+		<div class="header__logo">
+			<img src="../img/logo.svg" alt="logo">
+			<img src="../img/logoWite.svg" alt="logo">
+		</div>
+		<div class="header__right">
+			<div class="header__phone">
+				<img src="@img/icons/phonebg.svg" data-popup="#popupPhone" alt="Image">
+				<a href="#"  class="header__link-phone">+38(888) 888 88 88</a>
+				</div>
+			
+				<select name="form[]" data-class-modif="change-lang">
+					<option data-btn="" data-class="option current" selected></option>
+					<option data-btn="ua" data-class="option"  value="ua">UA</option>
+					<option data-btn="ru" data-class="option"  value="ru">RU</option>
+					<option data-btn="en" data-class="option" value="en">EN</option>
+				</select>
+		<div data-da=".meny__body, 767.98" class="header__action action-header">
+						<a href="#" class="action-header__link">+38(888) 888 88 88</a>
+					   <button data-popup="#popup"  class="action-header__button button button--border"><span data-lang="reservation">Бронювання</span></button> 
+					 <!-- <a data-goto-header data-goto=".price" class="action-header__link">Вартiсть</a>      -->
+			</div>
+		</div>
+
+		<button type="button" class="menu__icon icon-menu"><span></span></button>
+	</div>
+</header>

@@ -1,0 +1,52 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+// Шапка блока
+
+.block-header {
+    display: grid;
+    justify-items: start;
+    gap: 1.25rem;
+    &--center {
+        justify-items: center;
+    }
+    &__label {
+        line-height: 156.25%; /* 25/16 */
+        text-transform: capitalize;
+    }
+    &__title {
+        color: $goldColor;
+        font-size: 3rem;
+        font-family: "Forum";
+        text-transform: capitalize;
+        line-height: 120%;
+        @include adaptiveValue("font-size", 48, 42);
+    }
+    &__text {
+        display: grid;
+        gap: 1.25rem;
+        line-height: 156.25%; /* 25/16 */
+        blockquote {
+            font-style: italic;
+        }
+    }
+}
+
+.up {
+    transform: rotate(-90deg);
+    font-size: 1.875rem;
+    position: fixed;
+    bottom: .625rem;
+    right: .625rem;
+    opacity: 1;
+    visibility: visible;
+    color: $bgGold;
+    z-index: 50;
+    transition: all 0.3s;
+    ._watcher-view & {
+        opacity: 0;
+        visibility: hidden;
+    }
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"Hotel Maryana"
+	})
+	
+	<body>
+		<div class="wrapper">
+			@@include('html/_popup.htm',{})
+			@@include('html/_header.htm',{})
+			<div id="popupPhone" aria-hidden="true" class="popup popup-phone">
+				<div class="popup__wrapper">
+					<button data-close type="button" class="popup__close popup-phone__close"></button>
+					<div class="popup__content">
+						<a href="#" class="popup-phone__link">+38(888) 888 88 88</a>
+						<a href="#" class="popup-phone__link">+38(888) 888 88 88</a>
+						<div class="popup__text">
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="popupReviews" aria-hidden="true" class="popup popup-reviews">
+				<div class="popup__wrapper">
+					<div class="popup__content">
+						<button data-close type="button" class="popup__close"></button>
+						<h3 class="popup__title title-reviews">
+							Залишити відгук
+						</h3>
+					
+						<form  action="#" id="form" class="reviews__form form-reviews">
+							<div class="form-reviews__item">							
+								<input data-validate data-required type="text" placeholder="Ім'я та прізвище" id="nameReview" name="name" class="form-popup__input">
+							</div>
+							<!-- <div class="form-reviews__item">								
+								<input id="formEmail" data-validate data-error="Введен не верный E-mail" placeholder="Емейл" data-required="email" type="text" name="form[]">
+							</div> -->
+							<!-- <div class="form-reviews__item">
+								<input type="text" id="formComment" placeholder="Місто/село" name="name" class="form-popup__input">
+							</div> -->
+							<div class="form-reviews__item">
+								<textarea id="formReview" name="message" data-autoheight data-autoheight-min="100" placeholder="Ваш відгук"></textarea>
+							</div>
+							<button type="submit" class="form-reviews__button button" id="review-add"><span>Надіслати</span></button>
+						</form>
+					
+					</div>
+				</div>
+			</div>
+			<main class="page">
+				<section  data-watch="navigator" class="hero">
+					<div class="hero__container">
+						<div class="hero__body">
+							<div class="hero__content">
+								<div class="hero__title">
+									<h1 data-lang="hero-title">Готель в курортному селищi Cхiдниця</h1>
+									<p class="hero__text"></p>
+								</div>
+								
+									
+								<a href="#" data-goto=".rooms" data-leng="hero-link" class="hero__button button button--border button"><span>Обрати номер</span></a>
+							</div>
+						</div>
+							<div class="hero__slider swiper">
+								<div class="hero__wrapper swiper-wrapper">
+									<div class="hero__slide slide-hero swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_1.png" alt="image slider" class="slide-hero__image">
+										</div>
+										
+									</div>
+									<div class="hero__slide slide-hero swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_2.png" alt="image slider" class="slide-hero__image">
+										</div>
+									</div>
+									<div class="hero__slide slide-hero swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_3.png" alt="image slider" class="slide-hero__image">
+										</div>
+									</div>
+									<div class="hero__slide slide-hero swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_4.png" alt="image slider" class="slide-hero__image">
+										</div>
+									</div>
+									<div class="hero__slide slide-hero swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_5.png" alt="image slider" class="slide-hero__image">
+										</div>
+									</div>
+													
+								</div>
+							</div>
+							<div class="hero__mini">
+								<div class="hero__mini-slider mini-slider swiper">
+									<div class="mini-slider__wrapper swiper-wrapper">
+									<div class="mini-slider__slide slide-hero slide-hero--mini swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_1.png" alt="image slider" class="mini-slide__image slide-hero__image">
+										</div>
+										
+									</div>
+									<div class="mini-slider__slide slide-hero slide-hero--mini swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_2.png" alt="image slider" class="mini-slide__image slide-hero__image">
+										</div>
+										
+									</div>
+									<div class="mini-slider__slide slide-hero slide-hero--mini swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_3.png" alt="image slider" class="mini-slide__image slide-hero__image">
+										</div>
+										
+									</div>
+									<div class="mini-slider__slide slide-hero slide-hero--mini swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_4.png" alt="image slider" class="mini-slide__image slide-hero__image">
+										</div>
+									</div>
+									<div class="mini-slider__slide slide-hero slide-hero--mini swiper-slide">
+										<div class="slide-hero__body">
+											<img src="/./img/hero/slide_5.png" alt="image slider" class="mini-slide__image slide-hero__image">
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="hero__controll">
+								<button class="hero__arrow hero__arrow--left _icon-slider-arrow"></button>
+								<button class="hero__arrow hero__arrow--right _icon-slider-arrow"></button>
+							</div>
+						</div>
+					<img src="/./img/hero/hero_bg.png" alt="Hero background" class="hero__bg">
+					<a href="#" data-goto=".hero" class="up _icon-slider-arrow"></a>
+				</section>
+				<section data-prlx-parent data-watch="navigator" id="location" class="location">
+					<div class="location__container">
+						<div class="location__body">
+						<div data-prlx class="location__image">
+							<img src="/./img/location/water.png" alt="Image">
+						</div>
+						<div class="location__content">
+							<div class="location__block-header block-header">
+								<div class="block-header__label">Про готель</div>
+								<h2 class="block-header__title">Мiсце для вiдпочинку та лiкування </h2>
+								<div class="block-header__text">
+									<blockquote>“They’re not just pets, they’re family”</blockquote>
+									<p>Карпати захоплюють у будь-яку пору року – красою гір та місцевим колоритом. Поміж пухнастих гір розкинулось курортне селище Схiдниця, саме тут знаходиться готель "Марьяна".</p>
+								</div>
+								<a href="#" data-goto=".rooms" class="block-header__button button"> <span>вибрати номер</span></a>
+								</div>
+						</div>
+					</div>
+					<div class="locatiom__advantages advantages">
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="/./img/icons/parking.svg" alt="image">
+							</div>
+							<div class="advantages__label">Паркування</div>
+						</div>
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="/./img/icons/sauna.svg" alt="image">
+							</div>
+							<div class="advantages__label">Cауна</div>
+						</div>
+						<div class="advantages__item">
+							<div class="advantages__icon">
+								<img src="/./img/icons/bbq.svg" alt="image">
+							</div>
+							<div class="advantages__label">Зона мангалу</div>
+						</div>
+					</div>
+					</div>
+				</section>
+				<section data-prlx-parent data-watch="navigator" id="rooms" class="rooms">
+					<div class="rooms__container">
+						<div class="rooms__block-header block-header block-header--center">
+							<div class="block-header__label">Готельнi номери</div>
+							<h2 class="block-header__title rooms__title">Ми пропонуемо <span>4 типа номерiв</span></h2>
+							</div>
+							<div class="rooms__items">
+								<div class="rooms__item item-rooms">							
+								<div class="item-rooms__content content-item" data-prlx>
+									<div class="content-item__block-header block-header">
+										<h3 class="content-item__title block-header__title">Люкс</h3>
+										<div class="content-item__info items-info">
+											<div class="item-info__area item-info">
+												<span class="icon"></span>
+												<div class="value">40 m<sup><small>2</small></sup></div>
+											</div>
+											<div class="item-info__bed item-info">
+												<span class="icon"></span>
+												<div class="value">Одне двоспальне ліжко та диван, який можна розкласти</div>
+											</div>
+											<div class="item-info__person item-info">
+												<span class="icon"></span>
+												<div class="value">Максимальна кількість гостей - 3 особи</div>
+											</div>
+											<div class="item-info__price">
+												<p class="value">Цiнa <span>1 400 грн</span> &#8260; нiч</p>
+											</div>
+										</div>
+										<div data-spollers>
+											<details>
+											<summary data-spoller-close class="content-item__spoller-title"><span>Детальнiше про номер</span><span class="arrow"><span></span></span></summary>
+										<div class="info-detaileds__items">
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i1.svg" alt="image">
+													</span>
+													<span class="value">Кондиціонер</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i2.svg" alt="image">
+													</span>
+													<span class="value">Шафа для зберігання речей</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i3.svg" alt="image">
+													</span>
+													<span class="value">Засоби гігієни</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i4.svg" alt="image">
+													</span>
+													<span class="value">Мінеральна вода</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i5.svg" alt="image">
+													</span>
+													<span class="value">Швидкісний WI-FI</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i6.svg" alt="image">
+													</span>
+													<span class="value">Великий телевізор</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i7.svg" alt="image">
+													</span>
+													<span class="value">Фен</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i8.svg" alt="image">
+													</span>
+													<span class="value">Набір рушників</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i9.svg" alt="image">
+													</span>
+													<span class="value">Поселення з тваринами (за додаткову плату)</span>
+												</div>
+												<div class="info-detaileds__item">
+													<span class="icon">
+														<img src="/./img/rooms/icons/i10.svg" alt="image">
+													</span>
+													<span class="value">Безкоштовний паркінг</span>
+												</div>
+											</div>
+										</details>
+										</div>
+										</div>
+								</div>
+								</div>
+								<div class="rooms__item item-rooms">
+									<div class="item-rooms__image" data-prlx>
+										<div class="item-rooms__slider swiper">
+											<div class="item-rooms__wrapper swiper-wrapper">
+											<div class="item-rooms__slide slide-item swiper-slide">
+												<div class="slide-item__body">
+													<img src="/./img/img01.png" alt="image">
+												</div>																				
+											</div>
+											<div class="item-rooms__slide slide-item swiper-slide">
+												<div class="sslide-item__body">
+													<img src="/./img/img03.png" alt="image">
+												</div>																				
+											</div>
+											</div>
+											<div class="item-rooms__arrows">
+												<button class="item-rooms__arrow item-rooms__arrow--prev _icon-slider-arrow"></button>
+												<button class="item-rooms__arrow item-rooms__arrow--next _icon-slider-arrow"></button>
+											</div>
+											</div>	
+											<a href="#" data-popup="#popup" class="block-header__button button item-rooms__button"><span>Забронювати номер</span></a>	
+									</div>
+								</div>								
+								<div  class="rooms__item item-rooms">
+									<div class="item-rooms__image"  data-prlx>
+										<div class="item-rooms__slider swiper">
+											<div class="item-rooms__wrapper swiper-wrapper">
+											<div class="item-rooms__slide slide-item swiper-slide">
+												<div class="slide-item__body">
+													<img src="/./img/img01.png" alt="image">
+												</div>																				
+											</div>
+											<div class="item-rooms__slide slide-item swiper-slide">
+												<div class="sslide-item__body">
+													<img src="/./img/img03.png" alt="image">
+												</div>																				
+											</div>
+											</div>
+											<div class="item-rooms__arrows">
+												<button class="item-rooms__arrow item-rooms__arrow--prev _icon-slider-arrow"></button>
+												<button class="item-rooms__arrow item-rooms__arrow--next _icon-slider-arrow"></button>
+											</div>
+											</div>	
+											<a href="#" data-popup="#popup" class="block-header__button button item-rooms__button"><span>Забронювати номер</span></a>	
+									</div>								
+								</div>
+								<div class="rooms__item item-rooms">							
+									<div class="item-rooms__content content-item"  data-prlx>
+										<div class="content-item__block-header block-header">
+											<h3 class="content-item__title block-header__title">Напiвлюкс</h3>
+											<div class="content-item__info items-info">
+												<div class="item-info__area item-info">
+													<span class="icon"></span>
+													<div class="value">40 m<sup><small>2</small></sup></div>
+												</div>
+												<div class="item-info__bed item-info">
+													<span class="icon"></span>
+													<div class="value">Одне двоспальне ліжко та диван, який можна розкласти</div>
+												</div>
+												<div class="item-info__person item-info">
+													<span class="icon"></span>
+													<div class="value">Максимальна кількість гостей - 3 особи</div>
+												</div>
+												<div class="item-info__price">
+													<p class="value">Цiнa <span>1 400 грн</span> &#8260; нiч</p>
+												</div>
+											</div>
+											<div data-spollers>
+												<details>
+												<summary data-spoller-close class="content-item__spoller-title"><span>Детальнiше про номер</span><span class="arrow"><span></span></span></summary>
+											<div class="info-detaileds__items">
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i1.svg" alt="image">
+														</span>
+														<span class="value">Кондиціонер</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i2.svg" alt="image">
+														</span>
+														<span class="value">Шафа для зберігання речей</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i3.svg" alt="image">
+														</span>
+														<span class="value">Засоби гігієни</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i4.svg" alt="image">
+														</span>
+														<span class="value">Мінеральна вода</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i5.svg" alt="image">
+														</span>
+														<span class="value">Швидкісний WI-FI</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i6.svg" alt="image">
+														</span>
+														<span class="value">Великий телевізор</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i7.svg" alt="image">
+														</span>
+														<span class="value">Фен</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i8.svg" alt="image">
+														</span>
+														<span class="value">Набір рушників</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i9.svg" alt="image">
+														</span>
+														<span class="value">Поселення з тваринами (за додаткову плату)</span>
+													</div>
+													<div class="info-detaileds__item">
+														<span class="icon">
+															<img src="/./img/rooms/icons/i10.svg" alt="image">
+														</span>
+														<span class="value">Безкоштовний паркінг</span>
+													</div>
+												</div>
+											</details>
+											</div>
+											</div>
+									</div>
+									</div>
+									<div class="rooms__item item-rooms">							
+										<div class="item-rooms__content content-item"  data-prlx>
+											<div class="content-item__block-header block-header">
+												<h3 class="content-item__title block-header__title">Стандарт</h3>
+												<div class="content-item__info items-info">
+													<div class="item-info__area item-info">
+														<span class="icon"></span>
+														<div class="value">40 m<sup><small>2</small></sup></div>
+													</div>
+													<div class="item-info__bed item-info">
+														<span class="icon"></span>
+														<div class="value">Одне двоспальне ліжко та диван, який можна розкласти</div>
+													</div>
+													<div class="item-info__person item-info">
+														<span class="icon"></span>
+														<div class="value">Максимальна кількість гостей - 3 особи</div>
+													</div>
+													<div class="item-info__price">
+														<p class="value">Цiнa <span>1 400 грн</span> &#8260; нiч</p>
+													</div>
+												</div>
+												<div data-spollers>
+													<details>
+													<summary data-spoller-close class="content-item__spoller-title"><span>Детальнiше про номер</span><span class="arrow"><span></span></span></summary>
+												<div class="info-detaileds__items">
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i1.svg" alt="image">
+															</span>
+															<span class="value">Кондиціонер</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i2.svg" alt="image">
+															</span>
+															<span class="value">Шафа для зберігання речей</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i3.svg" alt="image">
+															</span>
+															<span class="value">Засоби гігієни</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i4.svg" alt="image">
+															</span>
+															<span class="value">Мінеральна вода</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i5.svg" alt="image">
+															</span>
+															<span class="value">Швидкісний WI-FI</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i6.svg" alt="image">
+															</span>
+															<span class="value">Великий телевізор</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i7.svg" alt="image">
+															</span>
+															<span class="value">Фен</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i8.svg" alt="image">
+															</span>
+															<span class="value">Набір рушників</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i9.svg" alt="image">
+															</span>
+															<span class="value">Поселення з тваринами (за додаткову плату)</span>
+														</div>
+														<div class="info-detaileds__item">
+															<span class="icon">
+																<img src="/./img/rooms/icons/i10.svg" alt="image">
+															</span>
+															<span class="value">Безкоштовний паркінг</span>
+														</div>
+													</div>
+												</details>
+												</div>
+												</div>
+										</div>
+										</div>
+										<div class="rooms__item item-rooms">
+											<div class="item-rooms__image"  data-prlx>
+												<div class="item-rooms__slider swiper">
+													<div class="item-rooms__wrapper swiper-wrapper">
+													<div class="item-rooms__slide slide-item swiper-slide">
+														<div class="slide-item__body">
+															<img src="/./img/img01.png" alt="image">
+														</div>																				
+													</div>
+													<div class="item-rooms__slide slide-item swiper-slide">
+														<div class="sslide-item__body">
+															<img src="/./img/img03.png" alt="image">
+														</div>																				
+													</div>
+													</div>
+													<div class="item-rooms__arrows">
+														<button class="item-rooms__arrow item-rooms__arrow--prev _icon-slider-arrow"></button>
+														<button class="item-rooms__arrow item-rooms__arrow--next _icon-slider-arrow"></button>
+													</div>
+													</div>	
+													<a href="#" data-popup="#popup" class="block-header__button button item-rooms__button"><span>Забронювати номер</span></a>	
+											</div>
+										</div>	
+										<div class="rooms__item item-rooms">
+											<div class="item-rooms__image"  data-prlx>
+												<div class="item-rooms__slider swiper">
+													<div class="item-rooms__wrapper swiper-wrapper">
+													<div class="item-rooms__slide slide-item swiper-slide">
+														<div class="slide-item__body">
+															<img src="/./img/img01.png" alt="image">
+														</div>																				
+													</div>
+													<div class="item-rooms__slide slide-item swiper-slide">
+														<div class="sslide-item__body">
+															<img src="/./img/img03.png" alt="image">
+														</div>																				
+													</div>
+													</div>
+													<div class="item-rooms__arrows">
+														<button class="item-rooms__arrow item-rooms__arrow--prev _icon-slider-arrow"></button>
+														<button class="item-rooms__arrow item-rooms__arrow--next _icon-slider-arrow"></button>
+													</div>
+													</div>	
+													<a href="#" data-popup="#popup" class="block-header__button button item-rooms__button"><span>Забронювати номер</span></a>	
+											</div>
+										</div>	
+										<div class="rooms__item item-rooms">							
+										<div class="rooms__item item-rooms"  data-prlx>							
+											<div class="item-rooms__content content-item" >
+												<div class="content-item__block-header block-header">
+													<h3 class="content-item__title block-header__title">Економ</h3>
+													<div class="content-item__info items-info">
+														<div class="item-info__area item-info">
+															<span class="icon"></span>
+															<div class="value">40 m<sup><small>2</small></sup></div>
+														</div>
+														<div class="item-info__bed item-info">
+															<span class="icon"></span>
+															<div class="value">Одне двоспальне ліжко та диван, який можна розкласти</div>
+														</div>
+														<div class="item-info__person item-info">
+															<span class="icon"></span>
+															<div class="value">Максимальна кількість гостей - 3 особи</div>
+														</div>
+														<div class="item-info__price">
+															<p class="value">Цiнa <span>1 400 грн</span> &#8260; нiч</p>
+														</div>
+													</div>
+													<div data-spollers>
+														<details>
+														<summary data-spoller-close class="content-item__spoller-title"><span>Детальнiше про номер</span><span class="arrow"><span></span></span></summary>
+													<div class="info-detaileds__items">
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i1.svg" alt="image">
+																</span>
+																<span class="value">Кондиціонер</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i2.svg" alt="image">
+																</span>
+																<span class="value">Шафа для зберігання речей</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i3.svg" alt="image">
+																</span>
+																<span class="value">Засоби гігієни</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i4.svg" alt="image">
+																</span>
+																<span class="value">Мінеральна вода</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i5.svg" alt="image">
+																</span>
+																<span class="value">Швидкісний WI-FI</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i6.svg" alt="image">
+																</span>
+																<span class="value">Великий телевізор</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i7.svg" alt="image">
+																</span>
+																<span class="value">Фен</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i8.svg" alt="image">
+																</span>
+																<span class="value">Набір рушників</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i9.svg" alt="image">
+																</span>
+																<span class="value">Поселення з тваринами (за додаткову плату)</span>
+															</div>
+															<div class="info-detaileds__item">
+																<span class="icon">
+																	<img src="/./img/rooms/icons/i10.svg" alt="image">
+																</span>
+																<span class="value">Безкоштовний паркінг</span>
+															</div>
+														</div>
+													</details>
+													</div>
+													</div>
+											</div>
+											</div>						
+							</div>
+						</div>
+						<div class="rooms__more more-rooms" data-spollers="767.98,max">
+							<details data-prlx>
+								<summary class="more-rooms__title">БІЛЬШЕ ІНФОРМАЦІЇЇ</summary>
+								<div class="more-rooms__items">
+									<div class="more-rooms__item">
+										<div class="number">(01)</div>
+										<div class="value">Розрахунковий час виїзду – до 11:00; заїзд із 14:00</div>
+									</div>
+									<div class="more-rooms__item">
+										<div class="number">(02)</div>
+										<div class="value">Мінімальний період бронювання – 2 доби, у Новорічний та Різдвяний період  – 5 діб.</div>
+									</div>
+									<div class="more-rooms__item">
+										<div class="number">(03)</div>
+										<div class="value">Додаткове місце (розкладачка) надається за додаткову оплату – 400 UAH.</div>
+									</div>
+								</div>
+					
+							</details>
+						</div>
+					</div>
+				</section>
+				<section data-watch="navigator" class="price"></section>
+				<section data-prlx-parent  data-watch="navigator" id="contacts" class="contacts">
+					<div class="contacts__container">
+						<div class="contacts__location location-contacts">
+							<div data-prlx class="location-contacts__images">
+								<div class="location-contacts__block-image">
+									<img class="location-contacts__image" src="/./img/contacts/fasad.jpg" alt="image">
+									<div class="play-box">
+										<a href="#" target="_blank" class="location-contacts__play _icon-play-fill"><span></span></a>
+										<p>Дивитись вiдео</p>
+									</div>
+									</div>
+								<div class="location-contacts__block-image" id="map">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d2605.2182703691356!2d23.3400133!3d49.2343508!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDnCsDE0JzAyLjkiTiAyM8KwMjAnMzEuNyJF!5e0!3m2!1sru!2ssk!4v1713772724180!5m2!1sru!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									<!-- <img class="location-contacts__image" src="/./img/contacts/location.png" alt="image"> -->
+								</div>								
+						</div>
+						</div>
+						<div class="contacts__block-header block-header">
+							<div class="block-header__label">Контакти</div>
+							<h2 class="block-header__title">Завiтайте до нас</h2>
+							<address class="block-header__contacts contacts-items">
+									<div class="contacts-items__item _icon-location">
+										<h5>Адрес</h5>
+										<p>Україна, Львіська обл., смт. Східниця
+											вул. Шевченка 26</p>
+									</div>
+									<div class="contacts-items__item">
+										<h5>Телефон</h5>
+										<p><a href="tel:+30509539894">+3050-953-98-94</a></p>
+										<p><a href="tel:+30509539894">+3050-953-98-94</a></p>
+									</div>
+									<div class="contacts-items__item">
+										<h5>e-mail</h5>
+										<p><a href="mailto:elenasachno8@gmail.com">elenasachno8@gmail.com</a></p>
+									</div>
+									<div class="contacts-items__item">
+										<h5>Ми в соцiальних мережах</h5>
+										<div class="contacts-item__social social">
+											<a target="_blank" href="#" class="social__item _icon-s-tw"></a>
+											<a target="_blank" href="#" class="social__item _icon-s-inst"></a>
+											<a target="_blank" href="#" class="social__item _icon-s-tikTok"></a>
+											<a target="_blank" href="#" class="social__item _icon-s-midium"></a>
+										</div>
+										
+									</div>
+
+
+							</address>
+							<div></div>
+							<a href="#" data-goto=".rooms" class="block-header__button button"> <span>Вибрати номер</span></a>
+							</div>
+					</div>
+				</section>
+				<section data-watch="navigator" class="reviews">
+					<div class="reviews__container">
+						<div class="reviews__slider swiper">
+							<div class="reviews__wrapper swiper-wrapper">
+							<div class="reviews__slide swiper-slide">
+							</div>
+						</div>
+							<div class="reviews__arrows">
+								<button class="reviews__arrow reviews__arrow--prev _icon-slider-arrow"></button>
+								<button class="reviews__arrow reviews__arrow--next _icon-slider-arrow"></button>
+							</div>
+							</div>
+						<div class="reviews__bottom">
+							<h3 class="reviews__title">Ми завжди прагнемо до вдосконалення! <br>
+								Тому <span>будемо раді вашому відгуку.</span></h3>
+							<div class="reviews__box-btn"><button href="#" class="reviews__button button button--border" data-popup="#popupReviews" ><span>Написати відгук</span></button></div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
+

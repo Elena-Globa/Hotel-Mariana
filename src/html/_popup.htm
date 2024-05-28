@@ -1,0 +1,82 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<p class="popup__title">
+				Бронювання				
+			</p>
+			<p class="popup__text">
+				Адміністратор готелю відповість на ваші запитання та
+				 забронює потрібний вам номер
+			</p>
+		
+			<form  action="#" id="form" class="popup__form form-popup">
+				<div class="form-popup__items">
+					<div class="form-popup__item">
+						<label for="formRoom" class="form-popup__label">Тип номеру *</label>
+							<select  id="formRoom"  data-submit data-sctoll name="form[]" data-class-modif="form">
+								<option value="" selected></option>
+								<option value="2">Апартаменти</option>
+								<option value="3">Люкс</option>
+								<option value="4">Стандарт</option>
+								<option value="5">Эконом</option>												
+							</select>					
+					</div> 
+					<div class="form-popup__item">
+						<label for="formDataStart" class="form-popup__label">Дата заїзду *</label>
+						<input id="formDataStart" class="start" data-datepicker type="text" name="">
+					</div>
+					<div class="form-popup__item">
+						<label for="formDataEnd" class="form-popup__label">Дата виїзду *</label>
+						<input id="formDataEnd"  class="end" data-datepicker type="text" name="">
+					</div>
+					<div class="form-popup__item">
+						<label for="formQuantity" class="form-popup__label">Дорослі *</label>
+						<div data-quantity class="quantity">
+							<div class="quantity__input">
+								<input id="formQuantity" data-quantity-value data-validate data-required autocomplete="off" type="text" name="form[]" value="1">
+							</div>
+								<button data-quantity-minus type="button" class="quantity__button quantity__button--minus"></button>
+								<button data-quantity-plus type="button" class="quantity__button quantity__button--plus"></button>
+						
+						</div>
+					</div>
+					<div class="form-popup__item">
+						<label for="formQuantity" class="form-popup__label">Діти</label>
+						<div data-quantity class="quantity">
+							<div class="quantity__input">
+								<input data-quantity-value autocomplete="off" data-quantity-min="0"  type="text" name="form[]" value="0">
+							</div>
+							<button data-quantity-minus type="button" class="quantity__button quantity__button--minus"></button>
+							<button data-quantity-plus type="button" class="quantity__button quantity__button--plus"></button>
+						</div>
+					</div>
+					<div class="form-popup__item">
+						<label for="formName" class="form-popup__label">ПIБ *</label>
+						<input data-validate data-required type="text" id="formName" name="name" class="form-popup__input">
+					</div>
+					<div class="form-popup__item">
+						<label for="formEmail" class="form-popup__label">Email *</label>
+						<input id="formEmail" data-validate data-error="Введен не верный E-mail" data-required="email" type="text" name="form[]">
+					</div>
+					<div class="form-popup__item">
+						<label for="formPhone" class="form-popup__label">Телефон *</label>
+						<div class="placeholder"></div>
+						<input id="formPhone" type="tel" class="form-popup__input" data-tel-input maxlength="28">
+						<div class="placeholder"></div>
+					</div>				
+					<div class="form-popup__item">
+						<label for="formComment" class="form-popup__label">Коментар</label>
+						<input type="text" id="formComment" name="name" class="form-popup__input">
+					</div>
+					<div class="form-popup__item">
+						<input checked type="checkbox" id="formAgreement" name="agreement" class="form-popup__input checkbox-input ._req">
+						<label for="formAgreement" class="form-popup__label checkbox-label"><span>Я приймаю положення <a href="#">угоди</a> користувача та даю згоду на обробку моїх персональних даних</span></label>					
+					</div>
+				</div>			
+					<button type="submit" class="form-popup__button button"><span>Забронювати</span></button>
+				
+		</form>
+		</div>
+	</div>
+</div>

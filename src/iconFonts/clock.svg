@@ -1,0 +1,7 @@
+<svg width="16.000000" height="16.000000" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<path id="clock-fill" d="M16 8C16 12.4183 12.4183 16 8 16C3.58167 16 0 12.4183 0 8C0 3.58167 3.58167 0 8 0C12.4183 0 16 3.58167 16 8ZM8 3.5C8 3.22388 7.77612 3 7.5 3C7.22388 3 7 3.22388 7 3.5L7 9C7 9.17944 7.09619 9.34509 7.25195 9.43408L10.752 11.4341C10.9917 11.5712 11.2971 11.4878 11.4341 11.248C11.5712 11.0083 11.4878 10.7029 11.248 10.5659L8 8.70984L8 3.5Z" clip-rule="evenodd" fill="#9D875C" fill-opacity="1.000000" fill-rule="evenodd"/>
+</svg>
