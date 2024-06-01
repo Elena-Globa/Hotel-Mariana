@@ -388,3 +388,97 @@ function checkBrowserLang() {
  }
 
  langHotel()
+
+ function addActiveClass() {
+	let options = {
+		root: null,
+		rootMargin: '5px',
+		threshold: 0.5
+	}
+	let callback = function(entries, observer) {
+		entries.forEach(entry=> {
+			if (entry.isIntersecting) {
+				console.log('find', entry)
+				entry.target.classList.add('active');
+			}else{
+				entry.target.classList.remove('active');
+			}
+		});
+	}
+	let observer = new IntersectionObserver(callback, options);
+	let targets = document.querySelectorAll('.anim');
+	targets.forEach(target=>{
+		observer.observe(target)
+	})
+ }
+ addActiveClass()
+
+//  Apearance of text in the title
+
+function textAppearance() {
+	console.log('appearance')
+	let sliderCounter = 0;
+	let sliderContent = [
+		"будемо раді вашому відгуку."
+	]
+	
+	// let sliderContent = [
+	// 	"будемо раді вашому відгуку.",
+	// 	"будемо раді вашому відгуку.",
+	// 	"будемо раді вашому відгуку."
+	// ];
+	let sliderCon = sliderContent[sliderCounter].length;
+	console.log('sliderCon', sliderCon)
+	let slider = document.querySelector('#slider-text');
+	let sliderValue = document.querySelector('#sliderValue');
+	
+	function slide() {
+		console.log('slider', slider);
+		if (sliderCounter >= sliderContent.length) {
+			sliderCounter = 0;
+		  }
+		
+		  sliderValue.innerHTML = "";
+		  
+		//   sliderValue.classList.remove("holder-animation");
+		//   void sliderValue.offsetWidth;
+		//   sliderValue.classList.add("holder-animation");
+		//   
+		for (let i = 0; i < sliderContent[sliderCounter].length; i++) {
+			let letterDiv = document.createElement("div");
+			letterDiv.innerHTML = sliderContent[sliderCounter][i];
+			console.log('letterDiv', letterDiv);
+			if (letterDiv.innerHTML == " ") {
+				letterDiv.innerHTML = "&nbsp;";
+			  }
+			letterDiv.classList.add("start-leters");
+			letterDiv.classList.add("animation-leters");
+			letterDiv.style.animationDelay = i / 10 + "s";
+			sliderValue.appendChild(letterDiv);
+		}
+	
+		sliderCounter++;
+		console.log('sliderCounter', sliderCounter)
+	}
+	let options = {
+		root: null,
+		rootMargin: '5px',
+		threshold: 0.5
+	}
+	let callback = function(entries, observer) {
+		entries.forEach(entry=> {
+			if (entry.isIntersecting) {
+				slide()				
+			}
+		});
+	}
+	let observer = new IntersectionObserver(callback, options);
+	let animTexts = document.querySelectorAll('.anim-text');
+	animTexts.forEach(animText=>{
+		observer.observe(animText)
+	})
+	// setInterval(slide, 4000);
+	}
+textAppearance()
+
+

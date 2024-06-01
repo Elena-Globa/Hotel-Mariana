@@ -158,18 +158,8 @@
         object-position: top;
     }
 }
-.button--border {
-}
-
-.swiper-wrapper {
-}
 .slide-hero {
-    //    @include adaptiveValue("flex-basis", 742, 280);
-    &.swiper-slide-prev {
-        // transition: opacity 0.8s;
-        // opacity: 0;
-    }
-    //  &__content {
+     //  &__content {
         aspect-ratio: 1 / 1;
         border: .0625rem solid $bgGold;
         @include adaptiveValue("padding", 24, 10);
@@ -1154,6 +1144,52 @@ summary {
     &__container {
     }
 
+    &__block-header {
+        @media(min-width: $mobile) {
+            justify-items: center;           
+         }
+         &:not(:last-child) {
+            margin-bottom: 1.875rem;
+         }
+    }
+
+    // .reviews__label
+
+    &__label {
+    
+    }
+
+    // .reviews__title
+
+    &__title {
+    }
+
+    // .reviews__text
+
+    &__text {
+    }
+    &__write {
+        position: relative;
+        justify-self: end;
+    }
+    &__arrow-animation {
+        position: absolute;
+        top: 30%;
+        left: -70%;
+        color: $goldColor;
+        @include adaptiveValue("font-size", 33, 24);
+      
+    }
+    &__arrow-animation.anim.active {
+          animation: arrowWrite 2s forwards;
+    }
+    &__arrow-animation.two {
+        animation-delay: 1.5s;
+        opacity: 0;
+    }
+    &__button {
+   
+    }
     // .reviews__slider
 
     &__slider {
@@ -1218,16 +1254,12 @@ summary {
     &__text {
         @include adaptiveValue("font-size", 30, 18);
         line-height: 166.666667%; /* 50/30 */
+        gap: .625rem;
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 50, 15);
             margin-bottom: 3.125rem;
         }
-        p {
-            &:not(:last-child) {
-                margin-bottom: .9375rem;
-            }
-        }
-    }
+      }
 
     // .reviews__author
 
@@ -1273,15 +1305,16 @@ summary {
             justify-content: space-between;
 		}
 
-		// .reviews__title
-
-		&__title {
+	
+		&__text {
             font-family: "Forum";  
-            text-transform: uppercase;
+           
             @include adaptiveValue("font-size", 34, 28); 
             line-height: 130%; 
-            span {
+            .span {
                 color: $goldColor;
+                text-transform: uppercase;
+                display: inline;
             }          
 		}
 
@@ -1295,14 +1328,62 @@ summary {
         }
 
 }
+@keyframes arrowWrite {
+    0% {
+        left: -70%;
+        // opacity: 1;
+    }
+    100% {
+        left: -30%;
+        // opacity: 0;
+    }
+}
+// 
+
+#slider-text {
+  width: 600px;
+  display: flex;
+  gap: 15px;
+
+}
+
+#sliderValue {
+  display: flex;
+// transform: translateY(20px);
+}
+
+.start-leters {
+  opacity: 0;
+}
+
+.animation-leters {
+  animation: fadeo .3s forwards;
+}
 
 
+@keyframes fadeo {
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
+// .holder-animation {
+//   animation: holder 4s;
+// }
 
-
-
-      
-
-
-
- 
+@keyframes holder {
+  0%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
