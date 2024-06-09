@@ -395,11 +395,13 @@ function checkBrowserLang() {
 		rootMargin: '5px',
 		threshold: 0.5
 	}
+	
 	let callback = function(entries, observer) {
 		entries.forEach(entry=> {
 			if (entry.isIntersecting) {
 				console.log('find', entry)
 				entry.target.classList.add('active');
+				observer.disconnect()
 			}else{
 				entry.target.classList.remove('active');
 			}
@@ -408,8 +410,9 @@ function checkBrowserLang() {
 	let observer = new IntersectionObserver(callback, options);
 	let targets = document.querySelectorAll('.anim');
 	targets.forEach(target=>{
-		observer.observe(target)
+		observer.observe(target);	
 	})
+	
  }
  addActiveClass()
 
@@ -421,14 +424,7 @@ function textAppearance() {
 	let sliderContent = [
 		"будемо раді вашому відгуку."
 	]
-	
-	// let sliderContent = [
-	// 	"будемо раді вашому відгуку.",
-	// 	"будемо раді вашому відгуку.",
-	// 	"будемо раді вашому відгуку."
-	// ];
 	let sliderCon = sliderContent[sliderCounter].length;
-	console.log('sliderCon', sliderCon)
 	let slider = document.querySelector('#slider-text');
 	let sliderValue = document.querySelector('#sliderValue');
 	
@@ -447,18 +443,17 @@ function textAppearance() {
 		for (let i = 0; i < sliderContent[sliderCounter].length; i++) {
 			let letterDiv = document.createElement("div");
 			letterDiv.innerHTML = sliderContent[sliderCounter][i];
-			console.log('letterDiv', letterDiv);
-			if (letterDiv.innerHTML == " ") {
+				if (letterDiv.innerHTML == " ") {
 				letterDiv.innerHTML = "&nbsp;";
 			  }
 			letterDiv.classList.add("start-leters");
 			letterDiv.classList.add("animation-leters");
-			letterDiv.style.animationDelay = i / 10 + "s";
+			letterDiv.style.animationDelay = i / 15 + "s";
 			sliderValue.appendChild(letterDiv);
 		}
 	
 		sliderCounter++;
-		console.log('sliderCounter', sliderCounter)
+	
 	}
 	let options = {
 		root: null,
@@ -468,7 +463,8 @@ function textAppearance() {
 	let callback = function(entries, observer) {
 		entries.forEach(entry=> {
 			if (entry.isIntersecting) {
-				slide()				
+				slide()	
+				observer.disconnect()			
 			}
 		});
 	}
@@ -481,4 +477,9 @@ function textAppearance() {
 	}
 textAppearance()
 
-
+function totalLength(){
+	let path = document.querySelector('#check');
+	let len = Math.round(path.getTotalLength());
+	console.log('len', len)
+}
+// totalLength()

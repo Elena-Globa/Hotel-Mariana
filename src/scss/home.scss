@@ -615,10 +615,7 @@
                     background: url('../img/bg-button.png') center / cover no-repeat;
                     opacity: 0;
                 }
-            }
-            @media (any-hover: hover) {
-             
-            }
+            }          
         }
       
         @media (any-hover: hover) {
@@ -1145,6 +1142,8 @@ summary {
     }
 
     &__block-header {
+        max-width: 700px;
+        margin: 0 auto;
         @media(min-width: $mobile) {
             justify-items: center;           
          }
@@ -1162,33 +1161,51 @@ summary {
     // .reviews__title
 
     &__title {
+     
     }
 
     // .reviews__text
 
     &__text {
-    }
-    &__write {
-        position: relative;
-        justify-self: end;
-    }
-    &__arrow-animation {
-        position: absolute;
-        top: 30%;
-        left: -70%;
-        color: $goldColor;
-        @include adaptiveValue("font-size", 33, 24);
+
       
     }
-    &__arrow-animation.anim.active {
-          animation: arrowWrite 2s forwards;
-    }
-    &__arrow-animation.two {
-        animation-delay: 1.5s;
-        opacity: 0;
+  
+    &__write {
+        display: flex;
+        position: relative;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 120, 50);
+           
+        }
+      justify-content: end;
+        #arrowStart {
+            @include adaptiveValue("width", 150, 70);
+            @include adaptiveValue("height", 170, 110);
+            position: absolute;
+            top: -35px;
+           padding-top: 10px;
+            @include adaptiveValue(" right", 250, 50);
+       
+           path {
+                // fill:#222220;
+                // fill: $goldColor;
+                stroke: $goldColor;
+              
+                // animation: draw 2s  ease 2.3s forwards;
+               stroke-dasharray: 306px;
+               stroke-dashoffset: -306px;               
+            }           
+       
+        }
     }
     &__button {
-   
+        @include adaptiveValue("margin-top", 130, 90);
+        text-align: center;
+        width: 100%;
+        @media(max-width:$mobile) {
+            width: 100%;           
+        }       
     }
     // .reviews__slider
 
@@ -1210,6 +1227,7 @@ summary {
         justify-items: center;
         text-align: center;
         @include adaptiveValue(" gap", 50, 30);
+        padding-bottom: 10px;
     }
 
     // .reviews__icon
@@ -1257,7 +1275,7 @@ summary {
         gap: .625rem;
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 50, 15);
-            margin-bottom: 3.125rem;
+            // margin-bottom: 3.125rem;
         }
       }
 
@@ -1271,20 +1289,110 @@ summary {
     }
 
     // .reviews__arrow
+    &__arrows {
 
+    }
     &__arrow {
         position: absolute;
         top: 14.6875rem;
         z-index: 5;
         color: $goldColor;
         transition: color 0.3s;
-        @include adaptiveValue("font-size", 33, 24);
+        // @include adaptiveValue("font-size", 33, 24);
+        width: 5rem;
+        height: 5rem;
+    //    border: .0625rem solid $goldColor;
+        border-radius: 50%;
+        transition: .5s;
+        span {
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: .125rem solid $goldColor;
+            transform: translateY(-50%) rotate(-45deg);
+            border-top: none;
+            border-left: none;
+            transition: .5s;
+        }
         &--prev {
             left: 0;
             transform: rotate(-180deg);
+            transition: .5s;
+            span {
+                transition: .5s;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 2.375rem;
+                    height: .125rem;
+                    background: $goldColor;
+                    transform-origin: left;
+                    transform: rotate(45deg) translate(17px, 5px) scaleX(0);
+                    transition: .5s;
+                }
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    span {
+                        transform: translate(8px, -50%) rotate(-45deg);
+                    
+                       
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            width: 2.375rem;
+                            height: .125rem;
+                            background: $goldColor;
+                            transform-origin: left;
+                            transform: rotate(45deg) translate(-17px, 5px) scaleX(1); 
+                            transition: .5s;
+                        }
+                    }
+             
+    
+                 }
+            }
+
         }
         &--next {
             right: 0;
+            span {
+                // top: 50%;
+                // right: 20%;
+                &::before {
+                content: "";
+                position: absolute;
+                width: 2.375rem;
+                height: .125rem;
+                background: $goldColor;
+                transform-origin: right;
+                transform: rotate(45deg)
+                translate(-8px, 33px)scaleX(0);  
+                transition: .5s;              
+             }
+           
+
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    span {
+                        transform: translate(8px, -50%) rotate(-45deg);
+                    }
+                    span::before{
+                        content: "";
+                        position: absolute;
+                        width: 2.375rem;
+                        height: .125rem;
+                        background: $goldColor;
+                        transform-origin: right;
+                        transform: rotate(45deg)
+                        translate(-8px, 33px)scaleX(1);  
+                        transition: .5s;
+                    }
+    
+                 }
+            }
+         
         }
         @media (any-hover: hover) {
             &:hover {
@@ -1303,6 +1411,7 @@ summary {
             @include adaptiveValue("gap", 50, 30);
             flex-wrap: wrap;
             justify-content: space-between;
+            // @include adaptiveValue("padding-top", 30, 0);         
 		}
 
 	
@@ -1328,6 +1437,14 @@ summary {
         }
 
 }
+.reviews__write.anim.active #arrowStart path {                
+    animation: draw 2s  ease 2.3s forwards;
+}
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
 @keyframes arrowWrite {
     0% {
         left: -70%;
@@ -1341,7 +1458,7 @@ summary {
 // 
 
 #slider-text {
-  width: 600px;
+  max-width: 100%;
   display: flex;
   gap: 15px;
 
@@ -1349,6 +1466,7 @@ summary {
 
 #sliderValue {
   display: flex;
+  flex-wrap: wrap;
 // transform: translateY(20px);
 }
 
