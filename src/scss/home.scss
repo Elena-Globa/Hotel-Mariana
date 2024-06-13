@@ -943,12 +943,22 @@ summary {
             left: 0;
             border-radius: 50%; 
             padding: 3px; 
-            background:linear-gradient(45deg,#b19d76, transparent); 
-            -webkit-mask: 
-               linear-gradient(#fff 0 0) content-box, 
-               linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-                    mask-composite: exclude; 
+            background: url(../img/location/EllipseDasharray.svg) center / cover;
+            // background:linear-gradient(45deg,#b19d76, transparent); 
+            // -webkit-mask: 
+            //    linear-gradient(#fff 0 0) content-box, 
+            //    linear-gradient(#fff 0 0);
+            // -webkit-mask-composite: xor;
+            //         mask-composite: exclude; 
+          
+            animation: circleRotation 60s linear infinite;
+        }
+        @keyframes circleRotation {
+          
+            100% {
+               transform: rotate(360deg);
+            }
+            
         }
         &::before {
             position: absolute;
@@ -988,52 +998,54 @@ summary {
         
 	    }
 
-        @media (any-hover: hover) {
-            &:hover {
-                span {
-                    &::before {
-                        // opacity: 0.8;
-                    }                   
-                }
-                &::after {
-                    // transition: all 1s;
-                    transform: rotate(360deg);
-                }
-            }        
-        }
-        @keyframes play {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-            
-        }
+        
     }  
 }
 .play-box {
     position: absolute;
     bottom: 20%;
     p {
-        width: 140px;
+        @include adaptiveValue("width", 135, 80);
         position: absolute;
         @include adaptiveValue("font-size", 14, 7);
         text-transform: uppercase;
         z-index: 5;
         top: -50%;
         left: 2px;
+        cursor: pointer;
         @include adaptiveValue("left", 30, 20);
-        opacity: 0;
         @media(min-width: $tablet) {
             opacity: 1;
         }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 97%;
+            height: .05rem;
+            background-color: rgb( 34 , 34 , 32 );
+            left: 0;
+            bottom: -0.3125rem;
+            transform: scaleX(0);
+            transition: transform .3s;
+            transform-origin: right;
+            opacity: .6;
+        }
     }
+    @media (any-hover: hover) {
+        &:hover {
+            p::before {
+                transform: scaleX(1);
+                transition: transform .3s;
+                transform-origin: left;
+            }
+            span {
+                &::before {
+                    opacity: 0.8;
+                }                   
+            }
+          
+        }        
+    }  
 }
 
 .block-header {
@@ -1151,34 +1163,31 @@ summary {
             margin-bottom: 1.875rem;
          }
     }
+// .reviews__bottom
 
-    // .reviews__label
-
-    &__label {
-    
-    }
-
-    // .reviews__title
-
-    &__title {
-     
-    }
-
-    // .reviews__text
-
-    &__text {
-
-      
-    }
-  
+&__bottom {
+    @include adaptiveValue("margin-top", 60, 30);
+    display: flex;
+    @include adaptiveValue("gap", 50, 30);
+    flex-wrap: wrap;   
+    // justify-content: space-between;
+    // @include adaptiveValue("padding-top", 30, 0);         
+}
+ 
     &__write {
         display: flex;
+        margin-left: auto;
+        @media(max-width: $mobile) {
+             width: 100%;
+        }
+       
         position: relative;
+       
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 120, 50);
            
         }
-      justify-content: end;
+ 
         #arrowStart {
             @include adaptiveValue("width", 150, 70);
             @include adaptiveValue("height", 170, 110);
@@ -1202,9 +1211,10 @@ summary {
     &__button {
         @include adaptiveValue("margin-top", 130, 90);
         text-align: center;
-        width: 100%;
+       
         @media(max-width:$mobile) {
-            width: 100%;           
+           
+          width: 100%;           
         }       
     }
     // .reviews__slider
@@ -1284,7 +1294,7 @@ summary {
     &__author {
         font-style: normal;
         font-family: "Forum";
-        @include adaptiveValue("font-size", 48, 32);
+        @include adaptiveValue("font-size", 40, 32);
         color: $goldColor;
     }
 
@@ -1403,18 +1413,6 @@ summary {
             top: 3.75rem;
         }
     } 
-    	// .reviews__bottom
-
-		&__bottom {
-            @include adaptiveValue("margin-top", 60, 30);
-            display: flex;
-            @include adaptiveValue("gap", 50, 30);
-            flex-wrap: wrap;
-            justify-content: space-between;
-            // @include adaptiveValue("padding-top", 30, 0);         
-		}
-
-	
 		&__text {
             font-family: "Forum";  
            
